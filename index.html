@@ -45,6 +45,7 @@
         .title-image {
             width: 50px;
             height: auto;
+            transition: width 0.3s ease; /* Transição suave ao redimensionar */
         }
 
         .vector-image {
@@ -54,6 +55,7 @@
             width: 100%; /* Faz a imagem ocupar toda a largura do navegador */
             max-width: 60vh; /* Limita a largura máxima da imagem */
             height: auto; /* Mantém a proporção original */
+            transition: max-width 0.3s ease; /* Transição suave ao redimensionar */
         }
 
         .links-container {
@@ -126,6 +128,7 @@
             right: 0;
         }
 
+        /* Breakpoint para telas menores (máx. 768px - tablets) */
         @media (max-width: 768px) {
             body {
                 padding-top: 20px;
@@ -141,7 +144,7 @@
             }
 
             .title-image {
-                width: 40px;
+                width: 40px; /* Reduz o tamanho da imagem do título */
             }
 
             .links-background {
@@ -155,7 +158,24 @@
             }
 
             .vector-image {
-                max-width: 300px;
+                max-width: 40vh; /* Reduz a largura máxima da imagem Vetor */
+                top: 40px; /* Ajusta a posição vertical */
+            }
+        }
+
+        /* Breakpoint para telas muito pequenas (máx. 480px - smartphones) */
+        @media (max-width: 480px) {
+            .title-image {
+                width: 30px; /* Reduz ainda mais a imagem do título */
+            }
+
+            .vector-image {
+                max-width: 30vh; /* Reduz a largura máxima da imagem Vetor */
+                top: 20px; /* Ajusta a posição para não sobrepor o título */
+            }
+
+            h1 {
+                font-size: 2rem; /* Ajusta o tamanho do título */
             }
         }
     </style>
