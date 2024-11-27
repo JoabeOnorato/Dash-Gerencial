@@ -11,6 +11,7 @@
             font-family: 'Space Grotesk', sans-serif;
             text-align: center;
             background: linear-gradient(180deg, #1C1E25, #101116);
+            background: -webkit-linear-gradient(180deg, #1C1E25, #101116); /* Compatibilidade com navegadores móveis */
             margin: 0;
             padding: 0;
             display: flex;
@@ -35,6 +36,7 @@
             font-size: 3rem;
             font-weight: 700;
             background: linear-gradient(-106deg, #E52823, #FC830B);
+            background: -webkit-linear-gradient(-106deg, #E52823, #FC830B); /* Compatibilidade com navegadores móveis */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
@@ -47,10 +49,10 @@
 
         .vector-image {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 60px;
+            left: 0px;
             width: 100%; /* Faz a imagem ocupar toda a largura do navegador */
-            max-width: 500px; /* Limita a largura máxima da imagem */
+            max-width: 60vh; /* Limita a largura máxima da imagem */
             height: auto; /* Mantém a proporção original */
         }
 
@@ -87,6 +89,7 @@
             border-radius: 5px;
             font-size: 18px;
             background: linear-gradient(-106deg, #E52823, #FC830B);
+            background: -webkit-linear-gradient(-106deg, #E52823, #FC830B); /* Compatibilidade com navegadores móveis */
             border: none;
             cursor: pointer;
             transition: all 0.5s;
@@ -110,6 +113,7 @@
 
         .link:hover {
             background: linear-gradient(-106deg, #FC830B, #E52823);
+            background: -webkit-linear-gradient(-106deg, #FC830B, #E52823); /* Compatibilidade com navegadores móveis */
             transform: scale(1.1);
         }
 
@@ -151,7 +155,7 @@
             }
 
             .vector-image {
-                max-width: 300px; /* Limita a largura da imagem em telas menores */
+                max-width: 300px;
             }
         }
     </style>
