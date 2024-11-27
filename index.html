@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="icon" href="Icone.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            background: linear-gradient(180deg, #1C1E25, #101116);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .title-container {
+            position: absolute;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(-106deg, #E52823, #FC830B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+
+        .title-image {
+            width: 50px;
+            height: auto;
+        }
+
+        .vector-image {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%; /* Faz a imagem ocupar toda a largura do navegador */
+            max-width: 500px; /* Limita a largura máxima da imagem */
+            height: auto; /* Mantém a proporção original */
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .links-background {
+            background-color: #1E2026; 
+            border-radius: 15px; 
+            padding: 40px 30px; 
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; 
+        }
+
+        .link {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            padding: 15px 0;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 18px;
+            background: linear-gradient(-106deg, #E52823, #FC830B);
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s;
+            overflow: hidden;
+        }
+
+        .link span {
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .link span:after {
+            content: '\00bb'; /* Símbolo >> */
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .link:hover {
+            background: linear-gradient(-106deg, #FC830B, #E52823);
+            transform: scale(1.1);
+        }
+
+        .link:hover span {
+            padding-right: 25px;
+        }
+
+        .link:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .title-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .title-image {
+                width: 40px;
+            }
+
+            .links-background {
+                padding: 25px;
+                gap: 15px;
+            }   
+
+            .link {
+                font-size: 16px;
+                width: 180px;
+            }
+
+            .vector-image {
+                max-width: 300px; /* Limita a largura da imagem em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="Vector2.png" alt="Vector Icon" class="vector-image">
+    <div class="title-container">
+        <h1>DASHBOARDS</h1>
+        <img src="Dash.png" alt="Dashboard Icon" class="title-image">
+    </div>
+    <div class="links-container">
+        <div class="links-background">
+            <a href="https://app.powerbi.com/reportEmbed?reportId=5113ea1d-0c87-4931-8371-ad7a6b450c22&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>Tráfego</span></a>
+            <a href="https://app.powerbi.com/reportEmbed?reportId=f14dd873-2144-494a-ac1d-0242f5aa77a2&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>Mídias Sociais</span></a>
+            <a href="https://app.powerbi.com/reportEmbed?reportId=c2b5e269-3df9-44f0-8ddf-f3a335d64361&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>SportBook</span></a>
+        </div>
+    </div>
+</body>
+</html>
