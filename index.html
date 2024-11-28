@@ -5,84 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
     <link rel="icon" href="Icone.png" type="image/png">
+
+    <!-- Fonte personalizada do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Configurações básicas do corpo da página */
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            text-align: center;
-            background: linear-gradient(180deg, #1C1E25, #101116);
+            font-family: 'Space Grotesk', sans-serif; /* Fonte personalizada */
+            text-align: center; /* Centraliza o texto */
+            background: linear-gradient(180deg, #1C1E25, #101116); /* Fundo gradiente */
             background: -webkit-linear-gradient(180deg, #1C1E25, #101116); /* Compatibilidade com navegadores móveis */
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Layout em coluna */
             align-items: center;
-            height: 100vh;
+            height: 100vh; /* Ocupa toda a altura da tela */
             position: relative;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-attachment: fixed; /* Fundo fixo ao rolar */
+            background-repeat: no-repeat; /* Evita repetição do fundo */
         }
 
+        /* Container para o título principal */
         .title-container {
             position: absolute;
-            top: 20px;
+            top: 20px; /* Posiciona no topo */
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 15px; /* Espaço entre elementos */
         }
 
+        /* Estilo do título principal */
         h1 {
             font-size: 3rem;
             font-weight: 700;
-            background: linear-gradient(-106deg, #E52823, #FC830B);
+            background: linear-gradient(-106deg, #E52823, #FC830B); /* Gradiente no texto */
             background: -webkit-linear-gradient(-106deg, #E52823, #FC830B); /* Compatibilidade com navegadores móveis */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; /* Usa o gradiente no texto */
+            -webkit-text-fill-color: transparent; /* Deixa o fundo do texto transparente */
             margin: 0;
         }
 
+        /* Configura o ícone ao lado do título */
         .title-image {
             width: 50px;
             height: auto;
             transition: width 0.3s ease; /* Transição suave ao redimensionar */
         }
 
+        /* Estilo da imagem (Logo do lado esquerdo) */
         .vector-image {
             position: absolute;
             top: 60px;
             left: 0px;
-            width: 100%; /* Faz a imagem ocupar toda a largura do navegador */
-            max-width: 60vh; /* Limita a largura máxima da imagem */
-            height: auto; /* Mantém a proporção original */
+            width: 100%;
+            max-width: 60vh; /* Limita a largura máxima */
+            height: auto;
             transition: max-width 0.3s ease; /* Transição suave ao redimensionar */
         }
 
+        /* Container para os links */
         .links-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 15px; /* Espaço entre os links */
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 50%; /* Centraliza verticalmente */
+            transform: translateY(-50%); /* Ajusta o alinhamento vertical */
         }
 
+        /* Estilo do fundo onde os links estão */
         .links-background {
             background-color: #1E2026; 
-            border-radius: 15px; 
+            border-radius: 15px; /* Bordas arredondadas */
             padding: 40px 30px; 
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra no fundo */
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px; 
         }
 
+        /* Estilo geral dos links/botões */
         .link {
             display: inline-block;
-            text-decoration: none;
+            text-decoration: none; /* Remove sublinhado */
             color: white;
             font-weight: 700;
             padding: 15px 0;
@@ -90,20 +101,22 @@
             text-align: center;
             border-radius: 5px;
             font-size: 18px;
-            background: linear-gradient(-106deg, #E52823, #FC830B);
-            background: -webkit-linear-gradient(-106deg, #E52823, #FC830B); /* Compatibilidade com navegadores móveis */
+            background: linear-gradient(-106deg, #E52823, #FC830B); /* Fundo gradiente */
+            background: -webkit-linear-gradient(-106deg, #E52823, #FC830B);
             border: none;
             cursor: pointer;
-            transition: all 0.5s;
+            transition: all 0.5s; /* Animação ao passar o mouse */
             overflow: hidden;
         }
 
+        /* Adiciona animação no texto dentro do botão */
         .link span {
             display: inline-block;
             position: relative;
             transition: 0.5s;
         }
 
+        /* Adiciona uma setinha no texto ao passar o mouse */
         .link span:after {
             content: '\00bb'; /* Símbolo >> */
             position: absolute;
@@ -113,10 +126,11 @@
             transition: 0.5s;
         }
 
+        /* Animação ao passar o mouse no botão */
         .link:hover {
-            background: linear-gradient(-106deg, #FC830B, #E52823);
-            background: -webkit-linear-gradient(-106deg, #FC830B, #E52823); /* Compatibilidade com navegadores móveis */
-            transform: scale(1.1);
+            background: linear-gradient(-106deg, #FC830B, #E52823); /* Inverte as cores do gradiente */
+            background: -webkit-linear-gradient(-106deg, #FC830B, #E52823);
+            transform: scale(1.1); /* Aumenta o botão levemente */
         }
 
         .link:hover span {
@@ -127,70 +141,28 @@
             opacity: 1;
             right: 0;
         }
-
-        /* Breakpoint para telas menores (máx. 768px - tablets) */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 20px;
-            }
-
-            .title-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .title-image {
-                width: 40px; /* Reduz o tamanho da imagem do título */
-            }
-
-            .links-background {
-                padding: 25px;
-                gap: 15px;
-            }   
-
-            .link {
-                font-size: 16px;
-                width: 180px;
-            }
-
-            .vector-image {
-                max-width: 40vh; /* Reduz a largura máxima da imagem Vetor */
-                top: 40px; /* Ajusta a posição vertical */
-            }
-        }
-
-        /* Breakpoint para telas muito pequenas (máx. 480px - smartphones) */
-        @media (max-width: 480px) {
-            .title-image {
-                width: 30px; /* Reduz ainda mais a imagem do título */
-            }
-
-            .vector-image {
-                max-width: 30vh; /* Reduz a largura máxima da imagem Vetor */
-                top: 20px; /* Ajusta a posição para não sobrepor o título */
-            }
-
-            h1 {
-                font-size: 2rem; /* Ajusta o tamanho do título */
-            }
-        }
     </style>
 </head>
 <body>
+    <!-- Imagem de fundo decorativa -->
     <img src="Vector2.png" alt="Vector Icon" class="vector-image">
+
+    <!-- Container do título principal -->
     <div class="title-container">
         <h1>DASHBOARDS</h1>
         <img src="Dash.png" alt="Dashboard Icon" class="title-image">
     </div>
+
+    <!-- Container para os links -->
     <div class="links-container">
         <div class="links-background">
+            <!-- Links existentes -->
             <a href="https://app.powerbi.com/reportEmbed?reportId=5113ea1d-0c87-4931-8371-ad7a6b450c22&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>Tráfego</span></a>
             <a href="https://app.powerbi.com/reportEmbed?reportId=f14dd873-2144-494a-ac1d-0242f5aa77a2&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>Mídias Sociais</span></a>
             <a href="https://app.powerbi.com/reportEmbed?reportId=c2b5e269-3df9-44f0-8ddf-f3a335d64361&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>SportBook</span></a>
+            
+            <!-- Novo botão adicionado para Campanhas ainda nao tem um link -->
+            <a href="https://app.powerbi.com/reportEmbed?reportId=12345678-abcd-efgh-ijkl-9876543210&autoAuth=true&ctid=96044bc3-b2bd-4eee-a155-4f922fa6b83a" class="link" target="_blank"><span>Campanhas</span></a>
         </div>
     </div>
 </body>
